@@ -130,6 +130,26 @@
                 
             }
         }
+
+        #special-letters{
+
+            max-width: 200px;
+            flex-wrap: wrap;
+            background-color: rgba(0,0,0,.5);
+
+            *{
+                background-color: transparent !important;
+
+                &:hover{
+
+                    color: #ffffffdb !important;
+
+                }
+            }
+
+            
+            
+        }
     }
 
     table{
@@ -382,6 +402,40 @@ body{
                     border:none;
 
                 }
+            }
+
+            #special-letters{
+
+                margin: 0 auto 20px auto;
+                border-radius: 1px;
+
+                *{
+
+                    margin: 0 auto;
+                    width: 40px;
+                    height: 40px;
+                    font-size:larger;
+                    background-color: rgba(0,0,0,.5);
+                    color: #ffffffdb;
+                    text-shadow: 1px 1px rgba(0,0,0,.4),0px 1px rgba(0,0,0,.4),1px 0px rgba(0,0,0,.4),0px 0px rgba(0,0,0,.4);
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid transparent;
+                    transition: 50ms ease-in;
+
+                    &:hover{
+
+                        background-color: #ffffffdb;
+                        color: rgba(0,0,0);
+                        text-shadow: none;
+    
+                    }
+
+
+                }
+
+                
+
             }
             
         }

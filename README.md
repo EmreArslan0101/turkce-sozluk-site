@@ -19,3 +19,7 @@ The meaning of the names is reserved for Male and Female, as on the site, and if
 -JavaScript file for interface operations is "./src/ui.js".
 -The file of the actual operations on the site is "./src/index.js".
 -You can find all SCSS/SVG/Favicon files under "./src/styles/".
+
+--- Update Log/Güncelleme Günlüğü ---
+
+-Türkçe'de ki özel karakterleri yazabilmek için bir arayüz eklendi. / There added an interface for allows typing special characters in Turkish.

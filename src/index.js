@@ -70,5 +70,95 @@ function findTheMeaning(){
 
     );
     
-}
+};
+
+//Tıklama Sayacı
+//Click Counter
+
+let clickCount = 0;
+
+//Türkçedeki özel harfleri küçük ve büyük harf halinde yazabilmek için fonksiyon.
+//Function for typing special letters of Turkish lower case and upper case.
+
+document.getElementById("special-letters").addEventListener("click",(e) => {
+
+    //Özel harfleri yazabilmek için eğer durumu
+    //If statement for typing special letters
+
+    if(e.target != document.querySelector("#special-letters").lastChild){
+
+        document.querySelector("#arama").value += e.target.value;
+
+    //Küçük-Büyük harf değişimi için eğer durumu
+    //Else statement for Lower-Upper case change
+
+    }else{
+
+        //Bu eğer durumu, harflerin küçük yada büyük harf modunda olup olmadığını ve okun işlevini yukarıda oluşturduğumuz tıklama sayacının değerinin ikiye bölümünden kalanı sayesinde anlıyor.
+        //This if statement understands if letters are in lower or upper case mode and function of arrow with remainder of division by two.
+
+        if(clickCount%2 == 0){
+
+            //Tüm çocukların büyük harf moduna geçmesini sağlayan for...of döngüsü
+            //For...of that allows the all letters change to upper case mode
+
+            for(let i of document.querySelector("#special-letters").children){
+    
+                //Ok hariç tüm değerleri büyük harfli yaparken, okun sadece yönünü ve dolaylı olarak da işlevini değiştiriyor.
+                //While it makes all values upper case except arrow, It just changes direction of arrow and indirectly changes the function of arrow.
+
+                switch(i.value == "↑"){
+    
+                    case false:
+
+                        i.value = i.value.toUpperCase();
+
+                        break;
+
+                    case true:
+
+                        document.querySelector("#special-letters").lastChild.value = "↓";
+
+                        break;
+
+    
+                };
+                
+            };
+    
+            //Okun işlevini değiştirmek için tıklama sayacına bir ekliyor.
+            //It adds one to click counter for chnaging function of arrow.
+
+            clickCount++;
+    
+        //Az önce anlattığım eğer durumunun aynısı ama bu sefer harfleri küçük harf yapıyor ve okun işlevini eski haline döndürüyor.
+        //Same if statement with I told before, but this time, it makes letter lower case and changes function of arrow back.
+        
+        }else if(clickCount%2 == 1){
+    
+            for(let i of document.querySelector("#special-letters").children){
+    
+                switch(i.value == "↓"){
+    
+                    case false:
+                        i.value = i.value.toLowerCase();
+                        break;
+                    case true:
+                        document.querySelector("#special-letters").lastChild.value = "↑"
+                        break;
+    
+                };
+                
+            };
+    
+            document.querySelector("#special-letters").children[2].value = "ı";
+    
+            clickCount++;
+    
+        };
+
+    };
+
+});
+
 
